@@ -1,0 +1,25 @@
+mkdir build
+PYTHON = C:/Python27
+GENERATOR = Visual Studio 14 2015 Win64
+PYTHON_VERSION = 35
+ARCH = win64
+
+mkdir install
+mkdir build
+cd build
+mkdir external
+mkdir vsp
+cd external
+
+cmake -G "%GENERATOR%" ^
+-DCMAKE_BUILD_TYPE=%configuration% ^
+-DVSP_LIBRARY_PATH=C:/openvsp/build/external ^
+-DPYTHON_INCLUDE_DIR=%PYTHON%/include ^
+-DPYTHON_LIBRARY=%PYTHON%/libs/python%PYTHON_VERSION%.lib ^
+-DCMAKE_INSTALL_PREFIX=C:/openvsp/install ^
+-DCMAKE_BUILD_TYPE=Release
+
+C:/projects/openvsp/src
+
+
+PS C:\m4\OpenVSP_binaries> cmake -DCMAKE_BUILD_TYPE=Release -DPYTHON_INCLUDE_DIR=C:\Anaconda2\include -DPYTHON_LIBRARY=C:\Anaconda2\libs\python27.lib -SWIG_EXECUTABLE=C:\swigwin-3.0.12\swig.exe ..\OpenVSP\SuperProject\
